@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 
-const Semaforo = () => {
+const initialState = {
+    rojo:"",
+    amarillo:"",
+    verde:"",
+    morado:"",
+}
 
-    const [cambioColor, setCambioColor] = useState("rojo");
+const Semaforo = (props) => {
+    
+    const [cambioColor, setCambioColor] = useState(initialState);
+     //random useEffect
+    useEffect(() => {
+       setCambioColor({ rojo:"brillito"})  
+      },[]);
+
+
+     
+
+    
 
     return (
         <div >
@@ -11,9 +27,10 @@ const Semaforo = () => {
                 <div className="cable mt-5"></div>
                 <div className="palo"></div>
                 <div className="semaforo">
-                    <div  onClick={()=>setCambioColor("rojo")} className={"luces-circulo rojo"+(cambioColor === "rojo" ? " brillito" :"") } color="rojo" ></div>
-                    <div onClick={()=>setCambioColor("amarillo")} className={"luces-circulo amarillo"+(cambioColor === "amarillo" ? " brillito" :"")}color="amarillo"></div>
-                    <div onClick={()=>setCambioColor("verde")} className={"luces-circulo verde"+(cambioColor === "verde" ? " brillito" :"") } color="verde"></div>
+                    <div onClick={()=>setCambioColor({...initialState, rojo:"brillito"})} className={`luces-circulo rojo ${cambioColor.rojo}`} color="rojo" ></div>
+                    <div onClick={()=>setCambioColor({...initialState, amarillo:"brillito"})} className={`luces-circulo amarillo ${cambioColor.amarillo}`}color="amarillo"></div>
+                    <div onClick={()=>setCambioColor({...initialState, verde:"brillito"})} className={`luces-circulo verde ${cambioColor.verde}`} color="verde"></div>
+                    {props.state ?  <div onClick={()=>setCambioColor({...initialState, morado:"brillito"})} className={`luces-circulo morado ${cambioColor.morado}`} color="morado" ></div> : null}
                 </div>
             </div>
         </div>
