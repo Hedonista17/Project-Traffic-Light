@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 
 
-const initialState = {
+export const initialState = {
     rojo:"",
     amarillo:"",
     verde:"",
