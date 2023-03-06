@@ -1,27 +1,13 @@
-import React, { useState,useEffect } from "react";
+import React  from "react";
 
 
-export const initialState = {
-    rojo:"",
-    amarillo:"",
-    verde:"",
-    morado:"",
-}
 
 
-const Semaforo = (props) => {
+const Semaforo = ({state,setCambioColor,cambioColor,initialState}) => {
     
-const [cambioColor, setCambioColor] = useState(initialState);
-     //random useEffect
-    useEffect(() => {
-       setCambioColor({ rojo:"brillito"})  
-      },[]);
 
 
      
-
-    
-
     return (
         <div >
             <div className="container">
@@ -31,7 +17,7 @@ const [cambioColor, setCambioColor] = useState(initialState);
                     <div onClick={()=>setCambioColor({...initialState, rojo:"brillito"})} className={`luces-circulo rojo ${cambioColor.rojo}`} color="rojo" ></div>
                     <div onClick={()=>setCambioColor({...initialState, amarillo:"brillito"})} className={`luces-circulo amarillo ${cambioColor.amarillo}`}color="amarillo"></div>
                     <div onClick={()=>setCambioColor({...initialState, verde:"brillito"})} className={`luces-circulo verde ${cambioColor.verde}`} color="verde"></div>
-                    {props.state ?  <div onClick={()=>setCambioColor({...initialState, morado:"brillito"})} className={`luces-circulo morado ${cambioColor.morado}`} color="morado" ></div> : null}
+                    {state ?  <div onClick={()=>setCambioColor({...initialState, morado:"brillito"})} className={`luces-circulo morado ${cambioColor.morado}`} color="morado" ></div> : null}
                 </div>
             </div>
         </div>
