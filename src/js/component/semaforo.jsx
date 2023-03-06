@@ -8,9 +8,10 @@ export const initialState = {
     morado:"",
 }
 
+
 const Semaforo = (props) => {
     
-    const [cambioColor, setCambioColor] = useState(initialState);
+const [cambioColor, setCambioColor] = useState(initialState);
      //random useEffect
     useEffect(() => {
        setCambioColor({ rojo:"brillito"})  

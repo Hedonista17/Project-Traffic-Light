@@ -8,7 +8,8 @@
 }
 
 body {
-
+ width: 100vw;
+ height: 100vh;
     display: grid;
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
@@ -34,7 +35,11 @@ body {
 }
 
 /* titulo h1 DEL COMPONENTE LOGO.JSX */
+#botones {
+    display: flex;
+    justify-content: center;
 
+}
 .semaforo {
     width: 150px;
     height: 300px;
@@ -43,7 +48,6 @@ body {
     place-items: center;
     background-color: #333335e7;
     padding: 10px;
-    margin-bottom: 30%;
 }
 
 .luces-circulo {
